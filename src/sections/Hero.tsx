@@ -8,7 +8,7 @@ export function Hero() {
       <div className="hero-content">
         <p className="eyebrow hero-eyebrow">ARQUITETURA · PLANEJAMENTO · OBRA</p>
         <h1 id="hero-title">Espaços que fazem <em>sentido.</em></h1>
-        <div className="hero-foot"><p>Da primeira ideia à obra real.<br />Com inteligência, responsabilidade e identidade.</p></div>
+        <div className="hero-foot"><p>Projetos presenciais e a distância.</p></div>
       </div>
     </section>
   )

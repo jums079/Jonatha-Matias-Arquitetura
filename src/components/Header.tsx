@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { navigation } from '../data/site'
-import brandMark from '../assets/images/brand-mark.png'
+import brandDark from '../assets/images/brand-original-dark.png'
+import brandLight from '../assets/images/brand-original-light.png'
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -65,8 +66,7 @@ export function Header() {
     <>
       <header className={`site-header${scrolled || menuOpen ? ' is-scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}>
         <a ref={brandRef} className="brand" href="#inicio" aria-label="Jonatha Matias Arquitetura, início" onClick={() => setMenuOpen(false)}>
-          <img className="brand-mark" src={brandMark} width="1020" height="724" alt="" />
-          <span className="brand-name">JONATHA MATIAS<span>ARQUITETURA</span></span>
+          <img className="brand-logo" src={scrolled || menuOpen ? brandDark : brandLight} width="2093" height="1009" alt="" />
         </a>
         <nav className="desktop-nav" aria-label="Navegação principal">
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}

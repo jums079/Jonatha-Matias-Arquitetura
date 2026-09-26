@@ -10,9 +10,7 @@
   .site-header, .site-header.is-scrolled { height: 68px; }
   .site-header.menu-open { background: var(--paper); color: var(--ink); box-shadow: none; backdrop-filter: none; }
   .site-header .brand { position: relative; z-index: 2; }
-  .brand-mark { width: 2.8rem; }
-  .brand-name { font-size: .62rem; }
-  .brand-name span { font-size: .5rem; }
+  .brand-logo, .site-header.is-scrolled .brand-logo { width: 7.2rem; }
   .desktop-nav { display: none; }
   .menu-toggle { position: relative; z-index: 2; display: flex; flex: none; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 0; background: transparent; color: inherit; cursor: pointer; }
   .menu-toggle span { display: block; width: 23px; height: 1.5px; border-radius: 1px; background: currentColor; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
@@ -75,7 +73,8 @@
   .site-footer { padding-top: 4rem; }
   .footer-top { grid-template-columns: 1fr; gap: 3rem; padding-bottom: 4rem; }
   .footer-brand { grid-column: auto; }
-  .footer-monogram { width: 3.5rem; }
+  .footer-logo { width: 7.5rem; }
+  .about-stats { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-bottom { display: grid; gap: .8rem; padding-right: 3.5rem; }
 }
 

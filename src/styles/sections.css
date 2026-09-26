@@ -59,7 +59,10 @@
 .about-content { padding: clamp(5rem, 7vw, 8rem) var(--side) clamp(5rem, 7vw, 8rem) clamp(3rem, 6vw, 7rem); }
 .about-content h2 { max-width: 10ch; margin: 0 0 2.3rem; font: 400 clamp(3.5rem, 5.2vw, 6.2rem)/1.02 Georgia, 'Times New Roman', serif; letter-spacing: -.058em; }
 .about-content h2 em { color: #8f7865; }
-.about-lead { max-width: 29rem; margin: 0 0 3rem; font: 400 clamp(1.2rem, 1.7vw, 1.7rem)/1.45 Georgia, 'Times New Roman', serif; }
+.about-stats { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(1.3rem, 3vw, 3rem); max-width: 35rem; margin: 0 0 2.5rem; }
+.about-stat { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.about-stat-value { font: 400 clamp(4.2rem, 6vw, 7rem)/.9 Georgia, 'Times New Roman', serif; letter-spacing: -.075em; font-variant-numeric: tabular-nums; }
+.about-stat-label { color: var(--muted); font-size: .8rem; letter-spacing: .045em; line-height: 1.45; }
 .about-copy { max-width: 35rem; display: grid; gap: 1.35rem; border-top: 1px solid var(--line); padding-top: 2rem; }
 .about-copy p { margin: 0; color: #50534d; font-size: clamp(.94rem, .98vw, 1rem); line-height: 1.8; }
 .contact-section { padding-top: clamp(5rem, 7vw, 7rem); padding-bottom: clamp(5rem, 7vw, 7rem); }

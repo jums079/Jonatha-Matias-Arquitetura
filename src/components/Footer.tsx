@@ -1,6 +1,6 @@
 import { contact } from '../data/contact'
 import { navigation } from '../data/site'
-import brandMark from '../assets/images/brand-mark.png'
+import brandDark from '../assets/images/brand-original-dark.png'
 import { SocialIcon } from './SocialIcon'
 
 export function Footer() {
@@ -8,8 +8,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <img className="footer-monogram" src={brandMark} width="1020" height="724" alt="" loading="lazy" />
-          <p>Jonatha Matias<br />Arquitetura</p>
+          <img className="footer-logo" src={brandDark} width="2093" height="1009" alt="Jonatha Matias Arquitetura" loading="lazy" />
         </div>
         <div className="footer-column">
           <span className="footer-label">Navegação</span>
