@@ -1,0 +1,92 @@
+@media (max-width: 1100px) {
+  .desktop-nav { gap: 1.1rem; }
+  .about-section { grid-template-columns: 48% 52%; }
+  .about-content { padding-left: 3.5rem; }
+  .about-image { min-height: 52rem; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 4.4rem; }
+  .site-header, .site-header.is-scrolled { height: 68px; }
+  .site-header.menu-open { background: var(--paper); color: var(--ink); box-shadow: none; backdrop-filter: none; }
+  .site-header .brand { position: relative; z-index: 2; }
+  .brand-mark { width: 2.8rem; }
+  .brand-name { font-size: .62rem; }
+  .brand-name span { font-size: .5rem; }
+  .desktop-nav { display: none; }
+  .menu-toggle { position: relative; z-index: 2; display: flex; flex: none; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 0; background: transparent; color: inherit; cursor: pointer; }
+  .menu-toggle span { display: block; width: 23px; height: 1.5px; border-radius: 1px; background: currentColor; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
+  .menu-open .menu-toggle span:first-child { transform: translateY(3.75px) rotate(45deg); }
+  .menu-open .menu-toggle span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
+  .mobile-nav { position: fixed; z-index: 49; inset: 0; display: flex; flex-direction: column; justify-content: center; height: 100vh; height: 100dvh; padding: calc(68px + env(safe-area-inset-top)) var(--side) max(2rem, env(safe-area-inset-bottom)); overflow-y: auto; background: var(--paper); color: var(--ink); scrollbar-width: none; visibility: hidden; opacity: 0; transform: translateX(4%); transition: opacity .42s ease, transform .55s cubic-bezier(.22, 1, .36, 1), visibility .42s ease; }
+  .mobile-nav::-webkit-scrollbar { display: none; }
+  .mobile-nav.is-open { visibility: visible; opacity: 1; transform: translateX(0); }
+  .mobile-nav a { display: block; width: min(100%, 33rem); padding: clamp(.62rem, 1.7vh, 1rem) 0; border-bottom: 1px solid rgba(46, 49, 43, .13); font: 400 clamp(2rem, 6.2vw, 3.3rem)/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -.035em; transition: color .25s ease, padding-left .35s cubic-bezier(.22, 1, .36, 1), opacity .5s ease, transform .5s cubic-bezier(.22, 1, .36, 1); }
+  .mobile-nav a:last-child { border-bottom: 0; }
+  .mobile-nav a:hover, .mobile-nav a:focus-visible { color: #835f44; padding-left: .35rem; }
+  .mobile-nav.is-open a { animation: menu-link-in .55s cubic-bezier(.22, 1, .36, 1) both; }
+  .mobile-nav.is-open a:nth-child(2) { animation-delay: .045s; }
+  .mobile-nav.is-open a:nth-child(3) { animation-delay: .09s; }
+  .mobile-nav.is-open a:nth-child(4) { animation-delay: .135s; }
+  .mobile-nav.is-open a:nth-child(5) { animation-delay: .18s; }
+  .hero-section { min-height: 100svh; min-height: max(600px, 100svh); }
+  .hero-image img { object-position: 57% center; }
+  .hero-overlay { background: linear-gradient(0deg, rgba(15,20,18,.79), transparent 80%), linear-gradient(90deg, rgba(15,20,18,.2), transparent), linear-gradient(180deg, rgba(15,20,18,.46), transparent 23%); }
+  .hero-content { padding-top: 9rem; padding-bottom: 6.5rem; }
+  .hero-eyebrow { font-size: .59rem; }
+  .hero-content h1 { font-size: clamp(3.8rem, 13vw, 7rem); }
+  .hero-foot { justify-content: flex-start; margin-top: 2.4rem; }
+  .hero-foot p { font-size: .88rem; }
+  .manifesto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .manifesto-grid h2 { font-size: clamp(3rem, 9vw, 5.4rem); }
+  .manifesto-grid p { margin: 0; }
+  .projects-heading { margin-bottom: 3.5rem; }
+  .projects-heading h2 { font-size: clamp(3.4rem, 10vw, 6.5rem); }
+  .practice-layout { grid-template-columns: 1fr; gap: 4rem; }
+  .practice-intro h2 { font-size: clamp(3.4rem, 9vw, 5.4rem); }
+  .practice-intro p { margin-top: 2rem; }
+  .about-section { grid-template-columns: 1fr; }
+  .about-image { min-height: 0; height: min(130vw, 48rem); }
+  .about-image img { object-position: center 25%; }
+  .about-content { padding: 5.5rem var(--side) 6rem; }
+  .about-content h2 { font-size: clamp(3.5rem, 9vw, 6rem); }
+  .contact-grid h2 { font-size: clamp(3.7rem, 10vw, 6.5rem); }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 4rem 1.5rem; padding-bottom: 5rem; }
+  .site-footer { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  .footer-brand { grid-column: 1 / -1; }
+  .whatsapp-float { position: fixed; z-index: 45; inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #25d366; color: white; box-shadow: 0 4px 17px rgba(0,0,0,.2); transition: transform .25s ease, box-shadow .25s ease; }
+  .whatsapp-float svg { display: block; width: 24px; height: 24px; }
+  .whatsapp-float:active { transform: scale(.94); box-shadow: 0 2px 9px rgba(0,0,0,.2); }
+  @media (hover: hover) { .whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.22); } }
+}
+
+@media (max-width: 520px) {
+  .hero-content h1 { font-size: clamp(3.45rem, 14vw, 5.3rem); }
+  .manifesto-section { padding-top: 5rem; }
+  .manifesto-grid h2 { font-size: clamp(2.9rem, 12vw, 4rem); }
+  .manifesto-rule { margin-top: 5rem; }
+  .projects-heading h2 { font-size: clamp(3.2rem, 11vw, 4.5rem); }
+  .practice-item { padding-block: 2rem 2.2rem; }
+  .practice-item h3 { font-size: 1.8rem; }
+  .about-image { height: 125vw; }
+  .about-content h2 { font-size: clamp(3.2rem, 11vw, 4.5rem); }
+  .contact-grid h2 { font-size: clamp(3.5rem, 12vw, 5rem); }
+  .contact-section { padding-bottom: 4.5rem; }
+  .site-footer { padding-top: 4rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 3rem; padding-bottom: 4rem; }
+  .footer-brand { grid-column: auto; }
+  .footer-monogram { width: 3.5rem; }
+  .footer-bottom { display: grid; gap: .8rem; padding-right: 3.5rem; }
+}
+
+@keyframes menu-link-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+
+@media (max-width: 760px) and (max-height: 620px) {
+  .mobile-nav { justify-content: flex-start; }
+  .mobile-nav a { padding-block: .55rem; font-size: clamp(1.75rem, 5.5vw, 2.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav, .mobile-nav a, .menu-toggle span, .whatsapp-float { transition-duration: .01ms; }
+  .mobile-nav.is-open a { animation: none; }
+}

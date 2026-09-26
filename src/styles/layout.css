@@ -1,0 +1,43 @@
+#root { overflow: clip; }
+html.menu-locked, body.menu-locked { overflow: hidden; }
+.skip-link { position: fixed; z-index: 100; top: .75rem; left: var(--side); padding: .8rem 1rem; background: var(--paper); color: var(--ink); transform: translateY(-180%); }
+.skip-link:focus { transform: translateY(0); }
+.section-pad { padding-inline: var(--side); }
+.eyebrow { font-size: .7rem; font-weight: 600; letter-spacing: .22em; }
+.site-header { position: fixed; z-index: 50; inset: 0 0 auto; height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-inline: var(--side); color: white; transition: background .35s ease, color .35s ease, height .35s ease, box-shadow .35s ease; }
+.site-header.is-scrolled { height: 70px; background: rgba(242, 240, 235, .96); color: var(--ink); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(14px); }
+.brand { display: inline-flex; align-items: center; gap: .95rem; flex: none; }
+.brand-mark { width: 3.3rem; height: auto; filter: invert(1); }
+.site-header.is-scrolled .brand-mark { filter: none; }
+.brand-name { display: grid; gap: .3rem; font-size: .73rem; letter-spacing: .18em; font-weight: 600; line-height: 1; }
+.brand-name span { font-size: .58rem; letter-spacing: .37em; font-weight: 400; }
+.desktop-nav { display: flex; align-items: center; gap: clamp(1.2rem, 2.5vw, 3rem); }
+.desktop-nav a { position: relative; font-size: .72rem; font-weight: 500; letter-spacing: .075em; padding-block: .6rem; }
+.desktop-nav a::after { content: ''; position: absolute; bottom: .27rem; left: 0; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .3s ease; }
+.desktop-nav a:hover::after, .desktop-nav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.menu-toggle, .mobile-nav { display: none; }
+.site-footer { background: #dddbd4; padding: 5rem var(--side) 1.5rem; }
+.footer-top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(10rem, .9fr) minmax(14rem, 1.1fr); gap: 3rem; padding-bottom: 5rem; }
+.footer-brand { display: flex; align-items: flex-start; gap: 1.1rem; }
+.footer-monogram { width: clamp(3.5rem, 4vw, 4.5rem); height: auto; align-self: start; }
+.footer-brand p { font-size: .76rem; text-transform: uppercase; letter-spacing: .13em; line-height: 1.7; margin: .2rem 0 0; }
+.footer-column { display: grid; align-content: start; justify-items: start; gap: .8rem; }
+.footer-column nav { display: grid; gap: .8rem; }
+.footer-label { margin-bottom: 1.15rem; color: #555a53; font-size: .7rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; }
+.footer-column a { font-size: .9rem; line-height: 1.4; transition: color .2s ease; }
+.footer-column a:hover, .footer-bottom a:hover { color: #835f44; }
+.footer-column a span { display: block; margin-top: .15rem; color: var(--muted); font-size: .72rem; }
+.footer-column .footer-social { display: inline-flex; align-items: flex-start; gap: .75rem; }
+.footer-social svg { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .05rem; color: var(--ink); }
+.footer-whatsapp svg { transform: scale(.84); }
+.footer-column .footer-social span { margin: 0; color: var(--ink); font-size: .9rem; }
+.footer-social small { display: block; margin-top: .15rem; color: var(--muted); font-size: .72rem; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.35rem; border-top: 1px solid var(--line); color: #555a53; font-size: .72rem; letter-spacing: .03em; }
+.whatsapp-float { display: none; }
+.has-reveal [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1); }
+.has-reveal [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+.has-reveal .practice-item:nth-child(2) { transition-delay: .08s; }
+.has-reveal .practice-item:nth-child(3) { transition-delay: .16s; }
+.has-reveal .about-image[data-reveal] img { transform: scale(1.035); transition: transform 1.3s cubic-bezier(.22, 1, .36, 1); }
+.has-reveal .about-image[data-reveal].is-visible img { transform: scale(1); }
+@media (prefers-reduced-motion: reduce) { .has-reveal [data-reveal] { opacity: 1; transform: none; } .has-reveal .about-image[data-reveal] img { transform: none; } }
