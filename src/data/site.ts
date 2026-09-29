@@ -38,7 +38,7 @@ export const galleryImages = [
 ] as const
 
 export const practice = [
-  { title: 'Projeto', detail: 'Arquitetura pensada para o uso, a estética e a identidade de quem vive cada espaço.' },
-  { title: 'Planejamento', detail: 'Decisões organizadas desde o início, conectando o desenho à realidade da obra.' },
-  { title: 'Gestão & obra', detail: 'Coordenação de equipes e acompanhamento próximo dos desafios da execução.' },
+  { title: 'Projeto', detail: 'Projetos de construção, reforma, interiores e levantamentos cadastrais.' },
+  { title: 'Planejamento', detail: 'Elaboração de cronogramas, orçamento de obras e processos de liberação de alvarás.' },
+  { title: 'Gestão & obra', detail: 'Coordenação de equipes, acompanhamento e responsabilidade técnica de obras.' },
 ] as const
