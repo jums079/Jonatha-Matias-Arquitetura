@@ -52,8 +52,12 @@ export function ProjectGallery() {
   return (
     <div className="project-gallery">
       <div className="gallery-controls">
-        <button type="button" aria-label="Projeto anterior" disabled={activeIndex === 0} onClick={() => goTo(activeIndex - 1)}>←</button>
-        <button type="button" aria-label="Próximo projeto" disabled={activeIndex === galleryImages.length - 1} onClick={() => goTo(activeIndex + 1)}>→</button>
+        <button type="button" aria-label="Projeto anterior" disabled={activeIndex === 0} onClick={() => goTo(activeIndex - 1)}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+        </button>
+        <button type="button" aria-label="Próximo projeto" disabled={activeIndex === galleryImages.length - 1} onClick={() => goTo(activeIndex + 1)}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+        </button>
       </div>
       <div className="gallery-track" ref={trackRef} role="region" aria-label="Galeria de imagens de projetos" tabIndex={0} onScroll={syncActiveIndex} onKeyDown={handleKeyDown}>
         {galleryImages.map((item, index) => (

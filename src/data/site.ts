@@ -10,6 +10,10 @@ import galleryFour from '../assets/images/img7.jpeg'
 import galleryFive from '../assets/images/gallery-replacement-3.jpg'
 import gallerySix from '../assets/images/img6.jpeg'
 import portrait from '../assets/images/person1.jpeg'
+import residenceSlopedRoof from '../assets/images/residence-sloped-roof.jpeg'
+import residenceGreenBalcony from '../assets/images/residence-green-balcony.jpeg'
+import bedroomNeutral from '../assets/images/bedroom-neutral.jpeg'
+import residenceTileRoof from '../assets/images/residence-tile-roof.jpeg'
 
 export const siteImages = {
   hero: projectOne,
@@ -35,6 +39,10 @@ export const galleryImages = [
   { image: galleryFour, alt: 'Perspectiva de área externa com piscina e espaço de convivência durante o dia', width: 1600, height: 900, shape: 'wide' },
   { image: galleryFive, alt: 'Perspectiva de ambiente de spa com piscina ao entardecer', width: 1280, height: 720, shape: 'wide' },
   { image: gallerySix, alt: 'Perspectiva de espaço de trabalho com marcenaria e iluminação embutida', width: 1600, height: 900, shape: 'wide' },
+  { image: residenceSlopedRoof, alt: 'Residência de dois pavimentos com telhado inclinado, pedra e jardim', width: 1182, height: 1476, shape: 'portrait' },
+  { image: residenceGreenBalcony, alt: 'Residência contemporânea com varanda verde, madeira e garagem para dois carros', width: 1179, height: 1179, shape: 'square' },
+  { image: bedroomNeutral, alt: 'Quarto em tons neutros com armário espelhado e iluminação embutida', width: 1364, height: 768, shape: 'wide' },
+  { image: residenceTileRoof, alt: 'Casa térrea com telhado de cerâmica, fachada em pedra e caminho ajardinado', width: 1182, height: 1476, shape: 'portrait' },
 ] as const
 
 export const practice = [
