@@ -1,19 +1,23 @@
-import projectOne from '../assets/images/img17.jpeg'
-import projectTwo from '../assets/images/gallery-replacement-1.jpg'
-import projectThree from '../assets/images/img19.jpeg'
-import projectFour from '../assets/images/gallery-replacement-2.jpg'
+import projectOne from '../assets/images/img17.webp'
+import projectTwo from '../assets/images/gallery-replacement-1.webp'
+import projectThree from '../assets/images/img19.webp'
+import projectFour from '../assets/images/gallery-replacement-2.webp'
 import projectFive from '../assets/images/img21.jpeg'
-import galleryOne from '../assets/images/img18.jpeg'
-import galleryTwo from '../assets/images/img22.jpeg'
-import galleryThree from '../assets/images/img10.jpeg'
+import galleryOne from '../assets/images/img18.webp'
+import galleryTwo from '../assets/images/img22.webp'
+import galleryThree from '../assets/images/img10.webp'
 import galleryFour from '../assets/images/img7.jpeg'
 import galleryFive from '../assets/images/gallery-replacement-3.jpg'
 import gallerySix from '../assets/images/img6.jpeg'
-import portrait from '../assets/images/person1.jpeg'
+import portrait from '../assets/images/person1.webp'
 import residenceSlopedRoof from '../assets/images/residence-sloped-roof.jpeg'
 import residenceGreenBalcony from '../assets/images/residence-green-balcony.jpeg'
-import bedroomNeutral from '../assets/images/bedroom-neutral.jpeg'
+import bedroomNeutral from '../assets/images/bedroom-neutral.webp'
 import residenceTileRoof from '../assets/images/residence-tile-roof.jpeg'
+import gallerySeven from '../assets/images/img23.jpeg'
+import galleryEight from '../assets/images/img24.jpeg'
+import galleryNine from '../assets/images/img25.jpeg'
+import galleryTen from '../assets/images/img26.jpeg'
 
 export const siteImages = {
   hero: projectOne,
@@ -43,6 +47,10 @@ export const galleryImages = [
   { image: residenceGreenBalcony, alt: 'Residência contemporânea com varanda verde, madeira e garagem para dois carros', width: 1179, height: 1179, shape: 'square' },
   { image: bedroomNeutral, alt: 'Quarto em tons neutros com armário espelhado e iluminação embutida', width: 1364, height: 768, shape: 'wide' },
   { image: residenceTileRoof, alt: 'Casa térrea com telhado de cerâmica, fachada em pedra e caminho ajardinado', width: 1182, height: 1476, shape: 'portrait' },
+  { image: gallerySeven, alt: 'Perspectiva de residência contemporânea com telhados inclinados, madeira e concreto, garagem e jardim ao entardecer', width: 2213, height: 1652, shape: 'wide' },
+  { image: galleryEight, alt: 'Perspectiva de loja comercial com fachada em pedra travertino, painéis de tela metálica, vitrine de vidro e paisagismo com oliveiras', width: 1322, height: 877, shape: 'wide' },
+  { image: galleryNine, alt: 'Perspectiva de edifício comercial de dois pavimentos com painéis em aço corten, vidro curvo, painel vazado e pergolado de madeira', width: 1332, height: 861, shape: 'wide' },
+  { image: galleryTen, alt: 'Perspectiva de residência contemporânea de dois pavimentos com lajes curvas, ripado de madeira, parede de pedra e jardim tropical', width: 712, height: 877, shape: 'portrait' },
 ] as const
 
 export const practice = [
