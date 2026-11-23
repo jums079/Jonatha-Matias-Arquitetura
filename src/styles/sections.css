@@ -92,3 +92,7 @@
   .gallery-slide.square { width: 67vw; }
   .gallery-slide.portrait { width: 56vw; }
 }
+
+.image-lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: rgb(10 12 10 / 94%); }
+.image-lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; touch-action: pinch-zoom; }
+.image-lightbox-close { position: absolute; top: .5rem; right: .9rem; padding: 0 .5rem; border: 0; background: none; color: white; font-size: 2.5rem; line-height: 1; cursor: pointer; }
