@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
 import { galleryImages } from '../data/site'
 
@@ -6,6 +6,25 @@ export function ProjectGallery() {
   const trackRef = useRef<HTMLDivElement>(null)
   const slideRefs = useRef<Array<HTMLDivElement | null>>([])
   const [activeIndex, setActiveIndex] = useState(0)
+  const [zoomIndex, setZoomIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (zoomIndex === null) return
+    const onKey = (event: globalThis.KeyboardEvent) => {
+      if (event.key === 'Escape') setZoomIndex(null)
+    }
+    document.addEventListener('keydown', onKey)
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [zoomIndex])
+
+  const openZoom = (index: number) => {
+    if (window.matchMedia('(max-width: 760px)').matches) setZoomIndex(index)
+  }
 
   const goTo = (index: number) => {
     const track = trackRef.current
@@ -50,22 +69,28 @@ export function ProjectGallery() {
   }
 
   return (
-    <div className="project-gallery">
-      <div className="gallery-controls">
-        <button type="button" aria-label="Projeto anterior" disabled={activeIndex === 0} onClick={() => goTo(activeIndex - 1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
-        </button>
-        <button type="button" aria-label="Próximo projeto" disabled={activeIndex === galleryImages.length - 1} onClick={() => goTo(activeIndex + 1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
-        </button>
+      <div className="project-gallery">
+        <div className="gallery-controls">
+          <button type="button" aria-label="Projeto anterior" disabled={activeIndex === 0} onClick={() => goTo(activeIndex - 1)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+          </button>
+          <button type="button" aria-label="Próximo projeto" disabled={activeIndex === galleryImages.length - 1} onClick={() => goTo(activeIndex + 1)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+          </button>
+        </div>
+        <div className="gallery-track" ref={trackRef} role="region" aria-label="Galeria de imagens de projetos" tabIndex={0} onScroll={syncActiveIndex} onKeyDown={handleKeyDown}>
+          {galleryImages.map((item, index) => (
+              <div className={`gallery-slide ${item.shape}`} key={item.image} ref={(node) => { slideRefs.current[index] = node }}>
+                <img src={item.image} alt={item.alt} width={item.width} height={item.height} loading="lazy" decoding="async" onClick={() => openZoom(index)} />
+              </div>
+          ))}
+        </div>
+        {zoomIndex !== null && (
+            <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" onClick={() => setZoomIndex(null)}>
+              <button type="button" className="image-lightbox-close" aria-label="Fechar imagem ampliada">×</button>
+              <img src={galleryImages[zoomIndex].image} alt={galleryImages[zoomIndex].alt} />
+            </div>
+        )}
       </div>
-      <div className="gallery-track" ref={trackRef} role="region" aria-label="Galeria de imagens de projetos" tabIndex={0} onScroll={syncActiveIndex} onKeyDown={handleKeyDown}>
-        {galleryImages.map((item, index) => (
-          <div className={`gallery-slide ${item.shape}`} key={item.image} ref={(node) => { slideRefs.current[index] = node }}>
-            <img src={item.image} alt={item.alt} width={item.width} height={item.height} loading="lazy" decoding="async" />
-          </div>
-        ))}
-      </div>
-    </div>
   )
 }
